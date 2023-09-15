@@ -8,9 +8,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-
-  build:
-
+  build-and-push-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +17,7 @@ jobs:
       uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
       with:
         registry: ${{ env.REGISTRY }}
-        username: victor.posada
+        username: victorposada
         password: ${{ secrets.TOKEN }}
         
     - name: Extract metadata (tags, labels) for Docker
